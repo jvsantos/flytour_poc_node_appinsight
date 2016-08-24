@@ -52,4 +52,5 @@ server.on("listening", () => {
     const end = +new Date;
     const duration = end - start;
     appInsights.client.trackMetric("StartupTime", duration);
+    appInsights.client.trackEvent("Started On", new Date());
 });
