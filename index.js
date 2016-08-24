@@ -22,15 +22,17 @@ const server = http.createServer(function (req, res) {
     // track all "GET" requests
 	res.writeHead(200, { "Content-Type": "text/plain" });
 
-	appInsights.client.trackMetric('VERB', req.method);
+    // test using trackEvent
+    appInsights.client.trackEvent("TrackEvent - custom", { pid: process.id, 
+        pname: process.env.APPLICATION_NAME,
+        env: process.env.NODE_ENV });
 
-    appInsights.client.trackTrace("Meu evento");
-    appInsights.client.flush();
+    // test using trackTrace
+    appInsights.client.trackTrace("TrackTrace - Test appInsights real tracking");
 
     if(req.method === "GET" || req.method === "POST") {
+        // test using tarckRequest
         appInsights.client.trackRequest(req, res);
-
-
     }
 
     if(req.method === "GET") {
