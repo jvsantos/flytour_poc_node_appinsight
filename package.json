@@ -1,0 +1,16 @@
+{
+  "name": "instrumentation",
+  "version": "1.0.0",
+  "description": "test azure - application insights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Santos",
+  "license": "ISC",
+  "dependencies": {
+    "applicationinsights": "^0.15.18",
+    "dotenv": "^2.0.0",
+    "nodemon": "^1.10.0"
+  }
+}
